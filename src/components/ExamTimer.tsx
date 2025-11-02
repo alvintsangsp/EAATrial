@@ -35,13 +35,13 @@ export const ExamTimer = ({ startTime, duration, onTimeUp }: ExamTimerProps) => 
   return (
     <div
       className={cn(
-        "flex items-center gap-2 px-4 py-2 rounded-lg font-mono text-lg font-semibold transition-colors",
+        "flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-mono text-xl sm:text-2xl font-bold transition-colors shadow-lg",
         isCritical && "bg-destructive text-destructive-foreground animate-pulse",
         isLowTime && !isCritical && "bg-warning text-warning-foreground",
         !isLowTime && "bg-primary text-primary-foreground"
       )}
     >
-      <Clock className="w-5 h-5" />
+      <Clock className="w-6 h-6 sm:w-7 sm:h-7" />
       <span>
         {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
       </span>

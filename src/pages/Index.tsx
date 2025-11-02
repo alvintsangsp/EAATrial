@@ -115,10 +115,10 @@ const Index = () => {
       {examState === "welcome" && <ExamWelcome onStart={handleStartExam} />}
 
       {examState === "exam" && (
-        <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5 py-8 px-4">
-          <div className="max-w-4xl mx-auto space-y-6">
+        <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5 py-4 sm:py-6 lg:py-8 px-3 sm:px-4">
+          <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
             {/* Timer Header */}
-            <div className="flex justify-center">
+            <div className="flex justify-center sticky top-4 z-10">
               <ExamTimer
                 startTime={startTime}
                 duration={EXAM_DURATION}

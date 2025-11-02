@@ -41,52 +41,52 @@ export const ExamResults = ({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5 py-8 px-4">
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5 py-6 sm:py-8 px-4">
+      <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6">
         {/* Header Card */}
         <Card
           className={cn(
-            "p-8 text-center",
+            "p-6 sm:p-8 text-center",
             passed ? "bg-success/10 border-success/20" : "bg-destructive/10 border-destructive/20"
           )}
         >
-          <div className="space-y-4">
-            <div className="inline-block p-4 bg-background rounded-full">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="inline-block p-3 sm:p-4 bg-background rounded-full">
               <Trophy
                 className={cn(
-                  "w-12 h-12",
+                  "w-10 h-10 sm:w-12 sm:h-12",
                   passed ? "text-success" : "text-destructive"
                 )}
               />
             </div>
 
             <div>
-              <h1 className="text-4xl font-bold mb-2">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3">
                 {passed ? "✓ 合格" : "✗ 不合格"}
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground font-medium">
                 你的得分：{correctCount}/{totalQuestions} ({percentage}%)
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">總題數</p>
-                <p className="text-2xl font-bold">{totalQuestions}</p>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4">
+              <div className="space-y-2 p-3 sm:p-4 bg-background/50 rounded-lg">
+                <p className="text-sm sm:text-base text-muted-foreground">總題數</p>
+                <p className="text-2xl sm:text-3xl font-bold">{totalQuestions}</p>
               </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">答對</p>
-                <p className="text-2xl font-bold text-success">{correctCount}</p>
+              <div className="space-y-2 p-3 sm:p-4 bg-background/50 rounded-lg">
+                <p className="text-sm sm:text-base text-muted-foreground">答對</p>
+                <p className="text-2xl sm:text-3xl font-bold text-success">{correctCount}</p>
               </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">答錯</p>
-                <p className="text-2xl font-bold text-destructive">
+              <div className="space-y-2 p-3 sm:p-4 bg-background/50 rounded-lg">
+                <p className="text-sm sm:text-base text-muted-foreground">答錯</p>
+                <p className="text-2xl sm:text-3xl font-bold text-destructive">
                   {totalQuestions - correctCount}
                 </p>
               </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">用時</p>
-                <p className="text-2xl font-bold">
+              <div className="space-y-2 p-3 sm:p-4 bg-background/50 rounded-lg">
+                <p className="text-sm sm:text-base text-muted-foreground">用時</p>
+                <p className="text-2xl sm:text-3xl font-bold">
                   {minutes}:{String(seconds).padStart(2, "0")}
                 </p>
               </div>
@@ -95,8 +95,8 @@ export const ExamResults = ({
         </Card>
 
         {/* Questions Review */}
-        <Card className="p-6">
-          <h2 className="text-2xl font-bold mb-4">逐題檢閱</h2>
+        <Card className="p-5 sm:p-6">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">逐題檢閱</h2>
           <Accordion type="multiple" className="w-full">
             {questions.map((question, index) => {
               const userAnswer = answers[index];
@@ -104,21 +104,21 @@ export const ExamResults = ({
 
               return (
                 <AccordionItem key={question.id} value={`question-${index}`}>
-                  <AccordionTrigger className="hover:no-underline">
-                    <div className="flex items-center gap-3 text-left">
+                  <AccordionTrigger className="hover:no-underline py-4 sm:py-5">
+                    <div className="flex items-center gap-3 sm:gap-4 text-left">
                       {isCorrect ? (
-                        <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0" />
+                        <CheckCircle2 className="w-6 h-6 sm:w-5 sm:h-5 text-success flex-shrink-0" />
                       ) : (
-                        <XCircle className="w-5 h-5 text-destructive flex-shrink-0" />
+                        <XCircle className="w-6 h-6 sm:w-5 sm:h-5 text-destructive flex-shrink-0" />
                       )}
-                      <span className="flex-1">
+                      <span className="flex-1 text-base sm:text-lg leading-relaxed">
                         {index + 1}. {question.question}
                       </span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="space-y-4 pt-4">
-                      <div className="space-y-2">
+                    <div className="space-y-4 sm:space-y-5 pt-4">
+                      <div className="space-y-3 sm:space-y-4">
                         {["A", "B", "C", "D", "E"].map((option) => {
                           const optionKey = `option${option}` as keyof Question;
                           const optionText = question[optionKey];
@@ -132,20 +132,20 @@ export const ExamResults = ({
                             <div
                               key={option}
                               className={cn(
-                                "p-3 rounded-lg border-2",
+                                "p-4 sm:p-5 rounded-lg border-2",
                                 isCorrectAnswer && "bg-success/10 border-success",
                                 isUserAnswer && !isCorrect && "bg-destructive/10 border-destructive",
                                 !isCorrectAnswer && !isUserAnswer && "bg-muted/30 border-border"
                               )}
                             >
-                              <div className="flex items-start gap-2">
-                                <span className="font-semibold">{option}.</span>
-                                <span className="flex-1">{optionText}</span>
+                              <div className="flex items-start gap-3">
+                                <span className="font-bold text-base sm:text-lg">{option}.</span>
+                                <span className="flex-1 text-base sm:text-lg leading-relaxed">{optionText}</span>
                                 {isCorrectAnswer && (
-                                  <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0" />
+                                  <CheckCircle2 className="w-6 h-6 sm:w-5 sm:h-5 text-success flex-shrink-0" />
                                 )}
                                 {isUserAnswer && !isCorrect && (
-                                  <XCircle className="w-5 h-5 text-destructive flex-shrink-0" />
+                                  <XCircle className="w-6 h-6 sm:w-5 sm:h-5 text-destructive flex-shrink-0" />
                                 )}
                               </div>
                             </div>
@@ -153,14 +153,14 @@ export const ExamResults = ({
                         })}
                       </div>
 
-                      <div className="bg-muted/50 p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">解釋：</h4>
-                        <p className="text-sm leading-relaxed">{question.explanation}</p>
+                      <div className="bg-muted/50 p-4 sm:p-5 rounded-lg">
+                        <h4 className="font-bold mb-3 text-base sm:text-lg">解釋：</h4>
+                        <p className="text-base sm:text-lg leading-relaxed">{question.explanation}</p>
                       </div>
 
                       {!isCorrect && (
-                        <div className="bg-destructive/10 border border-destructive/20 p-3 rounded-lg">
-                          <p className="text-sm">
+                        <div className="bg-destructive/10 border border-destructive/20 p-4 sm:p-5 rounded-lg">
+                          <p className="text-base sm:text-lg leading-relaxed">
                             <strong>你的答案：</strong> {userAnswer || "未作答"}{" "}
                             <strong className="ml-4">正確答案：</strong>{" "}
                             {question.correctAnswer}
@@ -176,26 +176,26 @@ export const ExamResults = ({
         </Card>
 
         {/* Action Buttons */}
-        <Card className="p-6">
-          <div className="space-y-4">
-            <div className="flex items-start gap-3 p-4 bg-muted/50 rounded-lg">
-              <Mail className="w-5 h-5 text-primary mt-0.5" />
+        <Card className="p-5 sm:p-6">
+          <div className="space-y-4 sm:space-y-5">
+            <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 bg-muted/50 rounded-lg">
+              <Mail className="w-6 h-6 sm:w-5 sm:h-5 text-primary mt-0.5" />
               <div className="flex-1">
-                <p className="font-medium mb-1">發現題目有錯誤或想提供意見？</p>
-                <p className="text-sm text-muted-foreground mb-3">
+                <p className="font-semibold mb-2 text-base sm:text-lg">發現題目有錯誤或想提供意見？</p>
+                <p className="text-base sm:text-sm text-muted-foreground mb-3 sm:mb-4">
                   請聯絡客戶服務回報問題
                 </p>
-                <Button variant="outline" size="sm" onClick={handleReportError}>
+                <Button variant="outline" size="default" onClick={handleReportError} className="text-base sm:text-sm">
                   回報問題
                 </Button>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <Button size="lg" onClick={onRetake}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <Button size="lg" onClick={onRetake} className="text-base sm:text-lg py-6">
                 重新考試
               </Button>
-              <Button size="lg" variant="outline" onClick={onExit}>
+              <Button size="lg" variant="outline" onClick={onExit} className="text-base sm:text-lg py-6">
                 返回主頁
               </Button>
             </div>
