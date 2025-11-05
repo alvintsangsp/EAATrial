@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ExamWelcome } from "@/components/ExamWelcome";
 import { ExamQuestion } from "@/components/ExamQuestion";
 import { ExamTimer } from "@/components/ExamTimer";
@@ -22,6 +23,7 @@ type ExamState = "welcome" | "exam" | "results";
 const EXAM_DURATION = 60 * 60; // 60 minutes in seconds
 
 const Index = () => {
+  const navigate = useNavigate();
   const [examState, setExamState] = useState<ExamState>("welcome");
   const [questions, setQuestions] = useState<Question[]>([]);
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
@@ -33,6 +35,14 @@ const Index = () => {
   const [showSubmitDialog, setShowSubmitDialog] = useState(false);
   const [hasShownFiveMinuteWarning, setHasShownFiveMinuteWarning] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Check if disclaimer has been accepted
+  useEffect(() => {
+    const disclaimerAccepted = localStorage.getItem("disclaimerAccepted");
+    if (!disclaimerAccepted) {
+      navigate("/disclaimer");
+    }
+  }, [navigate]);
 
   // Load questions from JSON file
   useEffect(() => {
