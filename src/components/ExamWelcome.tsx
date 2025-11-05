@@ -23,6 +23,10 @@ export const ExamWelcome = ({ onStart }: ExamWelcomeProps) => {
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5 flex items-center justify-center p-4 sm:p-6">
       <Card className="max-w-2xl w-full p-6 sm:p-8 shadow-xl">
         <div className="text-center space-y-6 sm:space-y-8">
+          <div className="inline-block p-3 sm:p-4 bg-primary/10 rounded-full">
+            <FileText className="w-10 h-10 sm:w-12 sm:h-12 text-primary" />
+          </div>
+
           {/* Disclaimer Button */}
           <Dialog open={disclaimerOpen} onOpenChange={setDisclaimerOpen}>
             <DialogTrigger asChild>
@@ -136,10 +140,6 @@ export const ExamWelcome = ({ onStart }: ExamWelcomeProps) => {
               </ScrollArea>
             </DialogContent>
           </Dialog>
-
-          <div className="inline-block p-3 sm:p-4 bg-primary/10 rounded-full">
-            <FileText className="w-10 h-10 sm:w-12 sm:h-12 text-primary" />
-          </div>
           
           <div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3">EAA 模擬考試</h1>
