@@ -19,19 +19,6 @@ export const Disclaimer = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5 py-6 sm:py-8 px-4">
       <div className="max-w-4xl mx-auto space-y-6">
-        {/* Header Warning Box */}
-        <Card className="bg-destructive/10 border-destructive p-6 sm:p-8">
-          <div className="flex items-start gap-4">
-            <AlertTriangle className="w-8 h-8 sm:w-10 sm:h-10 text-destructive flex-shrink-0" />
-            <div className="space-y-2">
-              <h1 className="text-2xl sm:text-3xl font-bold text-destructive">⚠️ 重要通知</h1>
-              <p className="text-base sm:text-lg leading-relaxed">
-                <strong>本應用程式不會頻繁更新。</strong>您<strong>必須</strong>主動向官方 EAA 資源查證所有資訊，以保持您的知識是最新的。您有責任確保資訊準確及最新。
-              </p>
-            </div>
-          </div>
-        </Card>
-
         {/* Main Disclaimer Content */}
         <Card className="p-6 sm:p-8">
           <div className="space-y-6">
@@ -50,7 +37,6 @@ export const Disclaimer = () => {
 
               <div className="space-y-3">
                 <h3 className="text-xl font-bold">2. 資料準確性 - 用戶責任</h3>
-                <p className="font-semibold text-destructive">重要：您必須保持最新的資訊</p>
                 <p>本應用程式的試題資訊<strong>可能不是最新的</strong>。香港的房地產法律和考試內容會定期改變。</p>
                 <p className="font-semibold">您的責任：</p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
@@ -126,7 +112,7 @@ export const Disclaimer = () => {
               </div>
 
               <div className="bg-destructive/10 border-2 border-destructive rounded-lg p-5 space-y-3">
-                <p className="text-xl font-bold text-destructive">⚠️ 最後警告</p>
+                <p className="text-xl font-bold text-destructive">⚠️ 重要通知</p>
                 <ul className="space-y-2">
                   <li>🔴 本應用程式不經常更新。您有責任保持最新的資訊。</li>
                   <li>🔴 不能依賴本應用程式通過考試。</li>
@@ -149,7 +135,7 @@ export const Disclaimer = () => {
                   htmlFor="agree" 
                   className="text-base sm:text-lg leading-relaxed cursor-pointer"
                 >
-                  我理解並同意上述所有條款。我明白本應用程式不會頻繁更新，我有責任向官方 EAA 資源查證所有資訊，以確保我的知識是最新和準確的。
+                  我理解並同意上述所有條款。
                 </label>
               </div>
 
