@@ -1,5 +1,4 @@
 // This file will be used to generate questions.ts from the parsed Excel data
-// Run this file in Lovable's environment where the xlsx package is available
 
 const fs = require('fs');
 const path = require('path');
