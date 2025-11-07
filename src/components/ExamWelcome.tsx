@@ -154,7 +154,7 @@ export const ExamWelcome = ({ onStart, onStartPractice }: ExamWelcomeProps) => {
             
             <div className="bg-red-100 border border-red-300 rounded-lg p-4">
               <p className="text-red-800 font-bold text-base sm:text-lg">
-                官方版本包含超過1300題傳統中文題目。
+                官方版本包含超過"1000"題傳統中文題目。
               </p>
             </div>
             
