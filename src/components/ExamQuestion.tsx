@@ -5,6 +5,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { ChevronLeft, ChevronRight, List } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { useEffect, useRef } from "react";
 
 interface ExamQuestionProps {
   question: Question;
@@ -35,6 +36,8 @@ export const ExamQuestion = ({
   canGoPrevious,
   canGoNext,
 }: ExamQuestionProps) => {
+  const questionTopRef = useRef<HTMLDivElement>(null);
+
   const options = [
     { value: "A", label: question.optionA },
     { value: "B", label: question.optionB },
@@ -48,9 +51,17 @@ export const ExamQuestion = ({
 
   const progress = ((currentIndex + 1) / totalQuestions) * 100;
 
+  // Auto-scroll to top when question changes
+  useEffect(() => {
+    if (questionTopRef.current) {
+      questionTopRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [currentIndex]);
+
   return (
     <div className="space-y-4 pb-32">
       {/* Progress Section */}
+      <div ref={questionTopRef} />
       <Card className="p-3 sm:p-4">
         <div className="space-y-2">
           <div className="flex justify-between items-center text-sm sm:text-base">
@@ -66,9 +77,14 @@ export const ExamQuestion = ({
       {/* Question Card */}
       <Card className="p-4 sm:p-6">
         <div className="space-y-4">
-          <h2 className="text-base sm:text-lg lg:text-xl font-bold leading-relaxed">
-            {currentIndex + 1}. {question.question}
-          </h2>
+          <div className="space-y-2">
+            <p className="text-sm sm:text-base text-muted-foreground font-medium">
+              題目編號：{question.id}
+            </p>
+            <h2 className="text-base sm:text-lg lg:text-xl font-bold leading-relaxed">
+              {question.question}
+            </h2>
+          </div>
 
           <RadioGroup value={selectedAnswer} onValueChange={onAnswerSelect}>
             <div className="space-y-2">
