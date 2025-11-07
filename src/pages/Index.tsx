@@ -95,7 +95,6 @@ const Index = () => {
         
         setAllQuestions(convertedQuestions);
         setIsLoading(false);
-        toast.success(`已載入 ${convertedQuestions.length} 題問題`);
       } catch (error) {
         console.error('Failed to load questions:', error);
         toast.error('載入問題失敗: ' + (error as Error).message);
