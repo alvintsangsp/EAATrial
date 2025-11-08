@@ -96,9 +96,9 @@ const Index = () => {
       try {
         // Try multiple paths for data loading to handle different deployment scenarios
         const pathsToTry = [
-          './data/eaa-questions.json',
-          '/data/eaa-questions.json',
-          './eaatrial/data/eaa-questions.json'
+          '/data/eaa-questions.json',  // For GitHub Pages deployment
+          './data/eaa-questions.json', // For local development
+          '/eaatrial/data/eaa-questions.json' // Alternative path
         ];
         
         let data;
