@@ -77,7 +77,7 @@ export const ExamWelcome = ({ onStart, onStartPractice }: ExamWelcomeProps) => {
                     <li>應主要參考香港地產代理監管局（香港地產代理人員資格考試（EAQE）/ 營業員資格 (SQE)）的官方資源</li>
                     <li>應在考試前確認資訊是否仍然適用</li>
                   </ul>
-                  <p className="text-sm">如發現任何錯誤或過時資訊，請立即聯繫我們：📧 cs@bitebite.app</p>
+                  <p className="text-sm">如發現任何錯誤或過時資訊，請立即聯繫我們：📧 cs@lazydads.net</p>
                   <p className="text-sm font-bold text-destructive">本應用程式不會頻繁更新。您有責任確保您的知識是最新的。</p>
                 </div>
 
@@ -120,7 +120,7 @@ export const ExamWelcome = ({ onStart, onStartPractice }: ExamWelcomeProps) => {
                 <div className="space-y-3">
                   <h3 className="text-lg font-bold">6. 錯誤回報</h3>
                   <p className="text-sm">如您發現錯誤，請聯繫我們：</p>
-                  <p className="text-sm font-semibold">電子郵箱：cs@bitebite.app</p>
+                  <p className="text-sm font-semibold">電子郵箱：cs@lazydads.net</p>
                   <p className="text-sm">請提供：題目編號（Question ID）、錯誤的詳細描述、正確答案或來源（如有）</p>
                 </div>
 
@@ -238,7 +238,7 @@ export const ExamWelcome = ({ onStart, onStartPractice }: ExamWelcomeProps) => {
       {/* Footer Section */}
       <div className="max-w-2xl w-full text-center space-y-2 pb-4">
         <p className="text-sm text-muted-foreground">
-          {t('feedback')}<a href="mailto:cs@bitebite.app" className="text-primary hover:underline">cs@bitebite.app</a>
+          {t('feedback')}<a href="mailto:cs@lazydads.net" className="text-primary hover:underline">cs@lazydads.net</a>
         </p>
         <p className="text-sm text-muted-foreground">
           {t('producedBy')}

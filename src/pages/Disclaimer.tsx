@@ -104,11 +104,11 @@ export const Disclaimer = () => {
                 </h3>
                 <p>如您發現錯誤或有疑問，請聯繫我們：</p>
                 <a 
-                  href="mailto:cs@bitebite.app?subject=香港地產代理人員資格考試（EAQE）/ 營業員資格 (SQE)%20Mock%20Exam%20-%20Error%20Report"
+                  href="mailto:cs@lazydads.net?subject=香港地產代理人員資格考試（EAQE）/ 營業員資格 (SQE)%20Mock%20Exam%20-%20Error%20Report"
                   className="inline-flex items-center gap-2 text-primary hover:underline font-semibold"
                 >
                   <Mail className="w-5 h-5" />
-                  cs@bitebite.app
+                  cs@lazydads.net
                 </a>
                 <p className="text-sm text-muted-foreground">請提供：題目編號、錯誤的詳細描述、正確答案或來源（如有）</p>
               </div>

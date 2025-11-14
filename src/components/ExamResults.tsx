@@ -41,7 +41,7 @@ export const ExamResults = ({
     const body = encodeURIComponent(
       t('questionFeedback')
     );
-    window.location.href = `mailto:cs@bitebite.app?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:cs@lazydads.net?subject=${subject}&body=${body}`;
   };
 
   return (
