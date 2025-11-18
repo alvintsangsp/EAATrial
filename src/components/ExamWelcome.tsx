@@ -231,6 +231,15 @@ export const ExamWelcome = ({ onStart, onStartPractice }: ExamWelcomeProps) => {
                 <strong className="text-lg sm:text-xl">{t('passingCriteria')}</strong> {t('passingCriteriaDetail')}
               </p>
             </div>
+            <Button
+              asChild
+              size="lg"
+              className="w-full text-lg sm:text-xl py-6 sm:py-7 bg-emerald-600 hover:bg-emerald-700 text-white"
+            >
+              <a href="https://eaareg.lazydads.net" target="_blank" rel="noreferrer">
+                升級到正式版本
+              </a>
+            </Button>
           </div>
         </div>
       </Card>
