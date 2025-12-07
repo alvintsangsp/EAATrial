@@ -285,7 +285,12 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Version number - bottom left corner */}
+      <div className="fixed bottom-0 left-0 p-2 text-xs text-muted-foreground pointer-events-none z-0">
+        t1.02
+      </div>
+
       {examState === "welcome" && (
         <ExamWelcome 
           onStart={handleStartExam} 
